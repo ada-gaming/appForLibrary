@@ -4,7 +4,7 @@
 #include"Boks.h"
 
 int main()
-{
+try{
 	std::vector<Books> horror;
 	std::vector<Books>::iterator iterHorror;
 	char choise;
@@ -22,4 +22,9 @@ int main()
 		std::cout << *iterHorror;
 	}
 	return 0;
+}
+catch (Books::Invalid)
+{
+	std::cout << "Error when entering the date\n";
+	return 1;
 }
