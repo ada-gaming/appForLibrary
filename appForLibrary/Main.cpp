@@ -3,21 +3,22 @@
 #include<vector>
 #include"Boks.h"
 
+void Add_new_book(std::vector<Books>& x);
+
 int main()
 try{
-	std::vector<Books> horror;
+	std::vector<Books> inLib;
 	std::vector<Books>::iterator iterHorror;
 	char choise;
-	Books temp;
+
 	do
 	{
-		std::cin>>temp;
-		horror.push_back(temp);
+		Add_new_book(inLib);
 		std::cout << "Next book?\ny-yes\nn-no\n";
 		std::cin >> choise;
 	} while (choise != 'n');
 	
-	for (iterHorror = horror.begin(); iterHorror != horror.end(); iterHorror++)
+	for (iterHorror = inLib.begin(); iterHorror != inLib.end(); iterHorror++)
 	{
 		std::cout << *iterHorror;
 	}
@@ -27,4 +28,11 @@ catch (Books::Invalid)
 {
 	std::cout << "Error when entering the date\n";
 	return 1;
+}
+
+void Add_new_book(std::vector<Books>& x)
+{
+	Books temp;
+	std::cin >> temp;
+	x.push_back(temp);
 }
