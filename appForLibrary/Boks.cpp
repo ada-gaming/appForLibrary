@@ -3,6 +3,7 @@
 
 Books::Books()
 {
+	Books::Empty_Book();
 }
 
 Books::Books(std::string nB, std::string nA, int y, genre g)
@@ -11,7 +12,7 @@ Books::Books(std::string nB, std::string nA, int y, genre g)
 	this->author = nA;
 	this->year = y;
 	this->g = g;
-	this->available = true;
+	this->available = 1;
 }
 
 Books& Books::Empty_Book()

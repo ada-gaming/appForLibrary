@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
 #include<iostream>
+class Reader;
 class Books
 {
 public:
-	enum genre { none, novel, horror, scientific, detective, comedy, fantasy };  //перечисление жанров
+	static enum genre { none, novel, horror, scientific, detective, comedy, fantasy };  //перечисление жанров
 	class Invalid {};
 	Books();                                                   //конструктор по умолчанию
 	Books(std::string nB, std::string  nA, int y, genre g);    //конструктор
@@ -18,7 +19,7 @@ private:
 	std::string author;
 	genre g;
 	int year;
-	bool available;
+	int available;
 
 
 	
